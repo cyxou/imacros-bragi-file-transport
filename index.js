@@ -1,7 +1,7 @@
 'use strict';
 
 var fio = require('imacros-fio');
-var vsprintf = require('format').vsprintf;
+var format = require('format-util');
 var formatDate = require('isolocaldateformat');
 
 function FileTransport ( options ){
@@ -30,10 +30,9 @@ FileTransport.prototype.log = function FileTransportLog( loggedObject ){
   var message = time + delim + group;
 
   if (loggedObject.originalArgs.length > 0)
-    message += delim + vsprintf(loggedObject.message, loggedObject.originalArgs);
-  else {
+    message += delim + format(loggedObject.message, loggedObject.originalArgs);
+  else
     message += delim + loggedObject.message;
-  }
 
   fio.append(this.logFileName, message + '\n');
   return this;
