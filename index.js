@@ -17,7 +17,7 @@ function FileTransport ( options ){
   // Transport specific settings
   // ------------------------------
   this.logFileName = options.logFileName;
-  this.spacing = options.spacing === undefined ? '\t' : options.spacing;
+  this.delimiter = options.delimiter === undefined ? '\t' : options.delimiter;
 
   return this;
 }
@@ -26,15 +26,15 @@ FileTransport.prototype.name = 'FileTransport';
 FileTransport.prototype.log = function FileTransportLog( loggedObject ){
   // Do something with loggedObject
   //window.console.log(loggedObject);
-  var spacing = this.spacing;
+  var delim = this.delimiter;
   var time = formatDate(new Date(loggedObject.unixTimestamp * 1000));
   var group = loggedObject.group;
-  var message = time + spacing + group;
+  var message = time + delim + group;
 
   if (loggedObject.originalArgs.length > 0)
-    message += spacing + vsprintf(loggedObject.message, loggedObject.originalArgs);
+    message += delim + vsprintf(loggedObject.message, loggedObject.originalArgs);
   else {
-    message += spacing + loggedObject.message;
+    message += delim + loggedObject.message;
   }
 
   fio.append(this.logFileName, message + '\n');
