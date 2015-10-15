@@ -24,8 +24,6 @@ function FileTransport ( options ){
 
 FileTransport.prototype.name = 'FileTransport';
 FileTransport.prototype.log = function FileTransportLog( loggedObject ){
-  // Do something with loggedObject
-  //window.console.log(loggedObject);
   var delim = this.delimiter;
   var time = formatDate(new Date(loggedObject.unixTimestamp * 1000));
   var group = loggedObject.group;
