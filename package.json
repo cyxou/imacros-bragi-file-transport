@@ -1,0 +1,30 @@
+{
+  "name": "imacros-bragi-file-transport",
+  "version": "1.0.0",
+  "description": "Log to file from iMacros' scripts with Bragi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cyxou/imacros-bragi-fileTransport.git"
+  },
+  "keywords": [
+    "imacros"
+  ],
+  "author": "Alex Sukhov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cyxou/imacros-bragi-fileTransport/issues"
+  },
+  "homepage": "https://github.com/cyxou/imacros-bragi-fileTransport#readme",
+  "devDependencies": {
+    "eslint": "^1.6.0"
+  },
+  "dependencies": {
+    "format": "^0.2.1",
+    "imacros-fio": "cyxou/imacros-fio",
+    "isolocaldateformat": "cyxou/isolocaldateformat"
+  }
+}
